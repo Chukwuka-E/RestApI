@@ -59,7 +59,7 @@ Retrieve a list of all notes.
 
 Retrieve a specific note by ID.
 
-### POST /api/notes
+### Render /api/notes
 
 Create a new note. The request body should include `title` and `content`.
 
@@ -69,8 +69,4 @@ Delete a note by ID.
 
 ## Testing the API
 
-You can test the API using Postman or any other API testing tool. Make sure to set the appropriate HTTP method and headers as needed.
-
-## License
-
-This project is licensed under the MIT License.
+You can test the API using Postman or any other API testing tool. Make sure to set the appropriate HTTP method and headers as neededBut i used render

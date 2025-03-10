@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: note-taking-api
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: MONGODB_URI
+        value: <mongodb+srv://emenikechukwuka65:xXP237JpP2fHonjH@restapi.5m81j.mongodb.net/>

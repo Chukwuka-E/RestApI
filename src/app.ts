@@ -1,3 +1,5 @@
+import dotenv from 'dotenv';
+dotenv.config();
 import express from 'express';
 import mongoose from 'mongoose';
 import noteRoutes from './routes/noteRoutes';
@@ -14,6 +16,11 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/note-taki
 })
 .then(() => console.log('MongoDB connected'))
 .catch(err => console.error('MongoDB connection error:', err));
+
+// Define a root route
+app.get('/', (req: Request, res: Response) => {
+    res.send('Welcome to my Note-Taking API😊');
+});
 
 app.use('/api/notes', noteRoutes);
 

@@ -1,28 +1,33 @@
 {
   "name": "note-taking-api",
   "version": "1.0.0",
-  "description": "A simple note-taking API built with Node.js, Express, and TypeScript.",
-  "main": "dist/app.js",
+  "description": "This is a simple note-taking API built with Node.js, Express, and TypeScript. It allows users to create, retrieve, update, and delete notes.",
+  "main": "playground-1.mongodb.js",
   "scripts": {
     "build": "tsc",
-    "prestart": "npm run build",
     "start": "node dist/app.js",
-    "dev": "ts-node src/app.ts",
-    "test": "echo \"No tests specified\" && exit 0"
+    "dev": "nodemon src/app.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Chukwuka-E/RestApI.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Chukwuka-E/RestApI/issues"
+  },
+  "homepage": "https://github.com/Chukwuka-E/RestApI#readme",
   "dependencies": {
-    "express": "^4.17.1",
-    "mongoose": "^5.10.9"
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mongoose": "^8.12.1"
   },
   "devDependencies": {
-    "typescript": "^4.1.2",
-    "ts-node": "^9.1.1",
-    "@types/node": "^14.14.6",
-    "@types/express": "^4.17.8",
-    "@types/mongoose": "^5.10.2"
-  },
-  "engines": {
-    "node": ">=12.0.0"
-  },
-  "license": "MIT"
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.13.10",
+    "typescript": "^5.8.2"
+  }
 }

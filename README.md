@@ -27,7 +27,9 @@ This is a simple note-taking API built with Node.js, Express, and TypeScript. It
 
 1. Clone the repository:
 
+   ```sh
    git clone https://github.com/yourusername/note-taking-api.git
+   ```
 
 2. Navigate to the project directory:
 

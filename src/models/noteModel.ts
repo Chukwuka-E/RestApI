@@ -1,28 +1,30 @@
-import mongoose, { Document, Schema, Model } from 'mongoose';
+import mongoose, { Document, Schema } from 'mongoose';
+
+export interface Category {
+    id: string;
+    name: string;
+}
 
 export interface INote extends Document {
     title: string;
     content: string;
+    category: Category;
     createdAt: Date;
     updatedAt: Date;
 }
 
+const CategorySchema: Schema = new Schema({
+    id: { type: String, required: true },
+    name: { type: String, required: true }
+});
+
 const NoteSchema: Schema = new Schema({
     title: { type: String, required: true },
     content: { type: String, required: true },
+    category: { type: CategorySchema, required: true },
     createdAt: { type: Date, default: Date.now },
     updatedAt: { type: Date, default: Date.now }
 });
 
-// ✅ Correct way to define a static method
-NoteSchema.statics.createNote = async function (noteInput: INote) {
-    const note = new this(noteInput);
-    return await note.save();
-};
-
-interface NoteModel extends Model<INote> {
-    createNote(noteInput: INote): Promise<INote>;
-}
-
-
-export const NoteModel = mongoose.model<INote, NoteModel>('Note', NoteSchema);
+export const NoteModel = mongoose.model<INote>('Note', NoteSchema);
+export default NoteModel; 

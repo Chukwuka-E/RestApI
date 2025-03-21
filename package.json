@@ -21,13 +21,20 @@
   },
   "homepage": "https://github.com/Chukwuka-E/RestApI#readme",
   "dependencies": {
+    "bcrypt": "^5.1.1",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
-    "mongoose": "^8.12.1"
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.12.1",
+    "uuid": "^11.1.0"
   },
   "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
+    "@types/bcryptjs": "^2.4.6",
     "@types/express": "^5.0.0",
+    "@types/jsonwebtoken": "^9.0.9",
     "@types/node": "^22.13.10",
+    "@types/uuid": "^10.0.0",
     "typescript": "^5.8.2"
   }
 }

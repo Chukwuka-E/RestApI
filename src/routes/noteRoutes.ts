@@ -1,18 +1,12 @@
-import { Router } from 'express';
-import NoteController from '../controllers/noteController';
-import { validateNote } from '../middleware/validateNote';
-import logger from '../middleware/logger';
+import express from "express";
+import { authenticateUser } from "../middleware/authMiddleware";
+import { createNote, getUserNotes, updateNote, deleteNote } from "../controllers/noteController";
 
-const router = Router();
-const noteController = new NoteController();
+const router = express.Router();
 
-router.use(logger);
-
-router.get('/', noteController.getAllNotes.bind(noteController));
-router.get('/:id', noteController.getNoteById.bind(noteController));
-router.get('/categories/:categoryId', noteController.getNotesByCategoryId.bind(noteController));
-router.post('/', validateNote, noteController.createNote.bind(noteController));
-router.put('/:id', validateNote, noteController.updateNote.bind(noteController));
-router.delete('/:id', noteController.deleteNote.bind(noteController));
+router.post("/", authenticateUser, createNote);
+router.get("/", authenticateUser, getUserNotes);
+router.put("/:id", authenticateUser, updateNote);
+router.delete("/:id", authenticateUser, deleteNote);
 
 export default router;

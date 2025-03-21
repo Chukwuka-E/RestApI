@@ -1,0 +1,10 @@
+# Ignore environment variables and sensitive files
+.env
+render.yaml
+
+# Ignore node_modules folder (to avoid tracking installed dependencies)
+node_modules/
+
+# Ignore build and log files
+dist/
+*.log

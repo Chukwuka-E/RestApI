@@ -4,17 +4,20 @@ This is a simple note-taking API built with Node.js, Express, and TypeScript. It
 
 ## Features
 
-- Create new notes
-- Retrieve all notes or a specific note by ID
-- Delete notes
-- Error handling with typed custom error classes
+🔹 User Authentication – Secure registration & login using JWT
+🔹 Password Security – User passwords are hashed using bcrypt
+🔹 Private Notes – Users can only access their own notes
+🔹 CRUD Operations – Create, Read, Update, and Delete notes
+🔹 Error Handling – Typed custom error classes for better debugging
 
 ## Technologies Used
 
-- Node.js
-- Express
-- TypeScript
-- MongoDB (with Mongoose)
+- Node.js – Backend runtime
+- Express.js – Web framework
+- TypeScript – Type safety & better maintainability
+- MongoDB & Mongoose – NoSQL database for storing notes
+- JWT (JSON Web Token) – Secure user authentication
+- Bcrypt – Password hashing for extra security
 
 ## Getting Started
 
@@ -41,7 +44,16 @@ This is a simple note-taking API built with Node.js, Express, and TypeScript. It
 
 ### Configuration
 
-1. Set up your MongoDB database and update the connection string in `src/app.ts`.
+1️⃣ Create a .env file in the root directory and add your MongoDB URI & JWT secret:
+
+env
+```
+MONGODB_URI=your_mongodb_connection_string
+PORT=3000
+JWT_SECRET=your_secret_key
+JWT_EXPIRES_IN=1h
+BCRYPT_SALT_ROUNDS=10
+```
 
 ### Running the Application
 
@@ -57,21 +69,32 @@ The server will be running on `http://localhost:3000`.
 
 Retrieve a list of all notes.
 
-### GET /api/notes/:id
+###  Authentication
+### 🔹 Authentication  
 
-Retrieve a specific note by ID.
+| Method | Endpoint            | Description             |
+|--------|---------------------|-------------------------|
+| POST   | /api/auth/register  | Register a new user    |
+| POST   | /api/auth/login     | User login & get JWT   |
 
-### Render /api/notes
+###  Notes Management  
 
-Create a new note. The request body should include `title` and `content`.
+| Method  | Endpoint          | Description                      |
+|---------|------------------|----------------------------------|
+| GET     | /api/notes       | Retrieve all user notes         |
+| GET     | /api/notes/:id   | Retrieve a specific note by ID  |
+| POST    | /api/notes       | Create a new note               |
+| PUT     | /api/notes/:id   | Update a note by ID             |
+| DELETE  | /api/notes/:id   | Delete a note by ID             |
 
 ## My Render link 
 https://restapi-2phl.onrender.com
 
-### DELETE /api/notes/:id
-
-Delete a note by ID.
-
 ## Testing the API
 
-You can test the API using Postman or any other API testing tool. Make sure to set the appropriate HTTP method and headers as neededBut i used render
+You can test the API using Postman or any other API testing tool. Make sure to set the appropriate HTTP method and headers as needed . But i used render
+
+## Finally 
+
+💡 Feel free to fork, contribute, or drop me a message if you have any ideas!
+Thanks for checking out my work! 🚀💻 – Chukwuka😊😊😊😊

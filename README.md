@@ -1,5 +1,7 @@
 # Note-Taking API
+## Note this has the tasks of the first day we started rest api to the third week of rest API . so please if you are looking for any of the weeks tasks its in the link/ files . Thank you 😊😊
 
+## Lets get back to explaining 
 This is a simple note-taking API built with Node.js, Express, and TypeScript. It allows users to create, retrieve, update, and delete notes.
 
 ## Features

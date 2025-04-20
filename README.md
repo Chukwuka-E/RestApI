@@ -89,8 +89,6 @@ Retrieve a list of all notes.
 | PUT     | /api/notes/:id   | Update a note by ID             |
 | DELETE  | /api/notes/:id   | Delete a note by ID             |
 
-## My Render link 
-https://restapi-2phl.onrender.com
 
 ## Testing the API
 
